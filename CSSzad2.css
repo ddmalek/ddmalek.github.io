@@ -1,0 +1,28 @@
+* {box-sizing:border-box;}
+html,body,h1,h2,h3,h4,h5,h6,p {font-family: "Roboto", sans-serif;}
+.classh3{padding: 10px; margin: 5px 0px;}
+hr{color:lightgray;}
+.class1{height:0px; border-width:2px;}
+.classspan2{font-weight: bold;}
+.p1{text-align: justify;}
+.p2{text-align: center;}
+body {background-color:lightgray; margin:0px; padding:20px; font-size:100%;}
+#zdjCV{position: relative; top: -107.5px; margin:0 auto; display:block; border-radius:10% 10% 10% 10%; width:150px; height:195px; padding:0px; box-shadow:0 4px 8px 1px rgba(0, 0, 0, 0.2), 0 6px 20px 2px rgba(0, 0, 0, 0.19);}
+#zdjCV:hover {transform: scale(120%); border-radius: 0% 0% 0% 0%;}
+#div1{justify-content: center;}
+#div2{background-color: DarkSlateGray; border: 0px; display: flex; justify-content: center; padding: 10px 0 0 0;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+h1 {padding: 0px; text-align: left; margin: 0px; border: 0px; padding: 5px; font-size: 2.5em; color: white;}
+h2 {padding: 0px; text-align: left; border: 0px; font-size: 1.875em;}
+#header1span{font-size: 75%; text-align: left; padding: 0px; margin: 0px; top: 0%; vertical-align: text-top;}
+.column {float: left; padding: 10px;}
+.column.left {width: 30%; height: 1900px; background-color:silver; white-space: normal !important; word-wrap: break-word;box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.column.right {width: 70%; white-space: normal !important; word-wrap: break-word;}
+.column.left2{width: 40%; font-weight: bold;}
+.column.right2{width: 60%; height: auto;}
+.contener2{display: flex;}
+.row:after {content: ""; display: table; clear: both;}
+@media screen and (max-width: 600px) {.column.left, .column.right {width: 100%; height: 100%;}}
+@media screen and (max-width: 700px) {#zdjCV  {top: 0px;}}
+@media screen and (min-width: 700px) {.p2  {position: relative; top: -107px;}}
+#divformatgrid{max-width: 1400px; margin: auto; padding: 0px; background-color: white; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.divboxright{box-shadow: 3px 4px 8px 0 rgba(0, 0, 0, 0.2), 2px 6px 20px 0 rgba(0, 0, 0, 0.19);}
