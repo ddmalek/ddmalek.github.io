@@ -1,0 +1,164 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 400px;
+}
+
+body, input, button{
+    font-size: 14px;
+    font-family: arial,sans-serif;
+    color: #222;
+}
+
+body{
+    background: #fff;
+}
+
+.warpper{
+    display:flex;
+    flex-direction:column;
+    height:100%
+}
+
+.div1{
+    display:flex;
+    align-items: center;
+    padding: 6px;
+    height: 60px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    background: brown;
+}
+
+.div2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height:  92px;
+    max-height: 290px;
+    max-height: calc(100% - 560px);
+    flex-shrink: 0;
+    box-sizing: border-box;
+    background: green;
+}
+
+.div3{
+    padding: 20px;
+    max-height: 160px;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    background: blue;
+}
+
+.div4{
+    flex-grow: 1;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    background:orange;
+}
+
+.div5{
+    background: #f2f2f2;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    background: pink;
+}
+
+.div1_1{
+    display: inline-block;
+    flex-grow: 1;
+}
+
+.div1_1_1{
+    min-width: auto;
+    z-index: 986;
+}
+
+.div1_1_1_1{
+    float: right;
+    box-sizing: border-box;
+    height: 48px;
+    line-height: normal;
+    padding: 0 4px 0 32px;
+    justify-content: flex-end;
+    white-space: nowrap;
+    -moz-box-align: center;
+    align-items: center;
+    display: flex;
+    -moz-user-select: -moz-none;
+    user-select: none;
+    color: black;
+}
+
+.div1_1_1_1_1{
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.div1_1_1_1_2{
+    float: right;
+    position: relative;
+    line-height: normal;
+    white-space: nowrap;
+}
+
+.div1_1_1_1_3{
+    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: absolute;
+    top: 0px;
+    width: 328px;
+    z-index: 991;
+    height: 0px;
+    margin-top: 57px;
+    transition:height 0.4s ease-in-out 0s;
+    right: 0px;
+    margin-right: 4px;
+    max-height: calc(-63px + 100vh);
+    visibility: hidden;
+    line-height: normal;
+    white-space: nowrap;
+    color: black;
+}
+
+.div1_1_1_1_4{
+    
+}
+
+.div1_1_1_1_1_1{
+    font-family: Arial, sans-serif;
+    line-height: normal;
+    padding: 15px;
+    white-space: nowrap;
+    color: black;
+}
+
+.div1_1_1_1_1_1_1{
+    display: inline-block;
+    padding-left: 15px;
+    font-family: Arial, sans-serif;
+    line-height: normal;
+    white-space: nowrap;
+    color: black;
+}
+
+.div1_1_1_1_1_1_2{
+    display: inline-block;
+    padding-left: 15px;
+    font-family: Arial, sans-serif;
+    line-height: normal;
+    white-space: nowrap;
+    color: black;
+}
+
+.div1_1_1_1_1_1_1_a{
+    display: inline-block;
+    line-height: 24px;
+    vertical-align: middle;
+    color: rgba(0,0,0,0.87);
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    white-space: nowrap;
+}
