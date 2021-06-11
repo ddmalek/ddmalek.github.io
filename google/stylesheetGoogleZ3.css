@@ -24,141 +24,117 @@ body{
 .div1{
     display:flex;
     align-items: center;
+    justify-content: right;
     padding: 6px;
     height: 60px;
     flex-shrink: 0;
-    box-sizing: border-box;
-    background: brown;
+    box-sizing:border-box;
+    /* background: brown; */
 }
 
-.div2{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height:  92px;
-    max-height: 290px;
-    max-height: calc(100% - 560px);
-    flex-shrink: 0;
-    box-sizing: border-box;
-    background: green;
-}
-
-.div3{
-    padding: 20px;
-    max-height: 160px;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    background: blue;
-}
-
-.div4{
-    flex-grow: 1;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    background:orange;
-}
-
-.div5{
-    background: #f2f2f2;
-    flex-shrink: 0;
-    box-sizing: border-box;
-    background: pink;
-}
-
-.div1_1{
-    display: inline-block;
-    flex-grow: 1;
-}
-
-.div1_1_1{
-    min-width: auto;
-    z-index: 986;
-}
-
-.div1_1_1_1{
+.div1_a{
+    padding: 0px 4px 0px 0px;
     float: right;
     box-sizing: border-box;
-    height: 48px;
-    line-height: normal;
-    padding: 0 4px 0 32px;
+    height:  48px;
+    display: flex;
+    font: 13px Roboto,RobotoDraft,Arial,sans-serif;
     justify-content: flex-end;
-    white-space: nowrap;
-    -moz-box-align: center;
     align-items: center;
-    display: flex;
-    -moz-user-select: -moz-none;
-    user-select: none;
-    color: black;
 }
 
-.div1_1_1_1_1{
+.colorpoints{
+    fill: currentColor;
+    color:#5f6368;
+}
+
+.przycisk_kropki{
+    cursor: pointer;
+    text-decoration: none;
+    padding: 8px;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 40px;
+    width: 40px;
+    border-radius: 2px;
+    vertical-align: middle;
+}
+
+.przycisk_kropki:hover{
+    border-radius: 20px;
+    background: rgb(230, 230, 230);
+}
+
+.przycisk_zaloguj{
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    margin-left: 8px;
+    background: #1a73e8;
+    border: 1px transparent;
+    line-height: 16px;
+    margin-right: 8px;
+    min-width: 96px;
+    padding: 9px 23px;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 4px;
+    box-sizing: border-box;
+    outline: none;
+    display: inline-block;
+}
+
+.przycisk_zaloguj:hover{
+    background: #2b7de9;
+    box-shadow: 0 1px 2px 0 rgba(66,133,244,0.3),0 1px 3px 1px rgba(66,133,244,0.15);
+}
+
+.przycisk_zaloguj:active{
+    background: #63a0ef;
+box-shadow: 0 1px 2px 0 rgba(66,133,244,0.3),0 1px 3px 1px rgba(66,133,244,0.15);
+}
+
+
+.div1_a_1{
     line-height: normal;
-    white-space: nowrap;
+    padding-right: 15px;
+    font-family: arial,sans-serif;
+    font: 13px/27px Roboto,RobotoDraft,Arial,sans-serif;
 }
 
-.div1_1_1_1_2{
+.div1_a_2{
     float: right;
-    position: relative;
-    line-height: normal;
-    white-space: nowrap;
-}
-
-.div1_1_1_1_3{
-    overflow: hidden;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    position: absolute;
-    top: 0px;
-    width: 328px;
-    z-index: 991;
-    height: 0px;
-    margin-top: 57px;
-    transition:height 0.4s ease-in-out 0s;
-    right: 0px;
-    margin-right: 4px;
-    max-height: calc(-63px + 100vh);
-    visibility: hidden;
-    line-height: normal;
-    white-space: nowrap;
     color: black;
+    font: 13px/27px Roboto,RobotoDraft,Arial,sans-serif;
 }
 
-.div1_1_1_1_4{
-    
-}
-
-.div1_1_1_1_1_1{
-    font-family: Arial, sans-serif;
-    line-height: normal;
-    padding: 15px;
-    white-space: nowrap;
-    color: black;
-}
-
-.div1_1_1_1_1_1_1{
+.div1_a_1_przycisk_gmail{
     display: inline-block;
     padding-left: 15px;
-    font-family: Arial, sans-serif;
-    line-height: normal;
-    white-space: nowrap;
-    color: black;
 }
 
-.div1_1_1_1_1_1_2{
+.div1_a_1_przycisk_grafika{
     display: inline-block;
     padding-left: 15px;
-    font-family: Arial, sans-serif;
-    line-height: normal;
-    white-space: nowrap;
-    color: black;
 }
 
-.div1_1_1_1_1_1_1_a{
+.div1_a_2_przycisk_kropki{
+    display: inline-block;
+    padding: 4px;
+    vertical-align: middle;
+}
+
+.przycisk_grafika, .przycisk_gmail{
     display: inline-block;
     line-height: 24px;
     vertical-align: middle;
-    color: rgba(0,0,0,0.87);
-    text-decoration: none;
-    font-family: Arial, sans-serif;
-    white-space: nowrap;
+    color: black;
+    text-decoration: none; 
+}
+
+.przycisk_grafika:hover, .przycisk_gmail:hover{
+    text-decoration: underline; 
 }
