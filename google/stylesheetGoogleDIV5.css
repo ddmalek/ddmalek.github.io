@@ -29,6 +29,7 @@
 .div5_2_b{
     display: flex;
     flex-wrap: wrap;
+    order: 2;
 }
 
 .div5_2_c{
