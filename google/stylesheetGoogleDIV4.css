@@ -1,0 +1,5 @@
+.div4{
+    flex-grow: 1;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}

@@ -1,0 +1,22 @@
+body, html{
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    min-width: 400px;
+}
+
+body, input, button{
+    font-size: 14px;
+    font-family: arial,sans-serif;
+    color: #222;
+}
+
+body{
+    background: #fff;
+}
+
+.wrapper{
+    display:flex;
+    flex-direction:column;
+    height: 100%;
+}

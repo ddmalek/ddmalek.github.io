@@ -1,0 +1,28 @@
+.div2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 92px;
+    max-height: 290px;
+    height: calc(100% - 560px);
+    flex-shrink: 0;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-family: arial,sans-serif;
+    color: #222;
+
+}
+
+.div2_1{
+    max-height: 92px;
+    mask-position: relative;
+    height: 100%;
+    margin-top:auto;
+}
+
+.div2_1_image{
+    max-height: 100%;
+    max-width: 100%;
+    object-position: center bottom;
+    width: auto;
+}
