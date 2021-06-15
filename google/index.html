@@ -58,7 +58,7 @@
                                         </div>
                                     </div>
                                     <div class="div3_form_1_a_1_a_inputdiv">
-                                        <input id="input_wyszukiwarki" class="div3_form_1_a_1_a_input" autofocus autocomplete="off" maxlength="500" type="text" name="search" title="Szukaj" oninput="f_akt_przycisk_x()" onfocus="funkcja_cieni_inputa()" onfocusout="funkcja_cieni_inputa2()">
+                                        <input id="input_wyszukiwarki" class="div3_form_1_a_1_a_input" autofocus autocomplete="off" maxlength="500" type="text" name="search" title="Szukaj" oninput="f_akt_przycisk_x()" onfocus="funkcja_cieni_inputa()" onblur="funkcja_cieni_inputa2()">
                                         <script>
                                             function f_akt_przycisk_x() {
                                               var przyciskX = document.getElementById("przycisk_x_id");
@@ -81,8 +81,8 @@
 
                                             function funkcja_cieni_inputa2() {
                                                 var element5 = document.getElementById("div_input_id");
-                                                element5.style.boxShadow = "";
-                                                element5.style.borderColor = "";
+                                                element5.style.boxShadow = "none";
+                                                element5.style.border = "1px solid #dfe1e5";
                                             }
                                         </script>
                                     </div>

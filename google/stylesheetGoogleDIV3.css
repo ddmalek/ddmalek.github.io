@@ -27,13 +27,15 @@
     height: 44px;
     margin: 0 auto;
     min-width: 100%;
-}
-
-.div3_form_1_a_1:hover{
-    background-color: #fff;
     box-shadow: 0 1px 6px rgba(32,33,36,.28);
     border-color: rgba(223,225,229,0);
 }
+
+/* .div3_form_1_a_1:hover{
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(32,33,36,.28);
+    border-color: rgba(223,225,229,0);
+} */
 
 .div3_form_1_a_2{
     display: inline-flex;
