@@ -14,7 +14,7 @@
 
     </head>
     <body>
-        <div class="wrapper">
+        <div id="wrapper">
             <div class="div1">
                 <div class="div1_a">
                     <div class="div1_a_1">
@@ -46,7 +46,7 @@
                 <form>
                     <div>
                         <div class="div3_form_1_a">
-                            <div class="div3_form_1_a_1">
+                            <div id="div_input_id" class="div3_form_1_a_1">
                                 <div class="div3_form_1_a_1_a">
                                     <div class="div3_form_1_a_1_a_lupa">
                                         <div class="div3_form_1_a_1_a_lupa_1">
@@ -58,13 +58,52 @@
                                         </div>
                                     </div>
                                     <div class="div3_form_1_a_1_a_inputdiv">
-                                        <input class="div3_form_1_a_1_a_input" maxlength="500" type="text" name="search" title="Szukaj" onfocus="this.value='Zadanie2'">
+                                        <input id="input_wyszukiwarki" class="div3_form_1_a_1_a_input" autofocus maxlength="500" type="text" name="search" title="Szukaj" oninput="f_akt_przycisk_x()" onfocus="funkcja_cieni_inputa()" onfocusout="funkcja_cieni_inputa2()">
+                                        <script>
+                                            function f_akt_przycisk_x() {
+                                              var przyciskX = document.getElementById("przycisk_x_id");
+                                              var input_search = document.getElementById("input_wyszukiwarki");
+                                                if (input_search.value!="") {
+                                                    przyciskX.style.display = "flex";
+                                                   } else {
+                                                       przyciskX.style.display = "none";
+                                                   }
+                                            }
+
+                                            function funkcja_cieni_inputa() {
+                                                var element4 = document.getElementById("div_input_id");
+                                                element4.style.boxShadow = "0px 1px 6px rgba(32,33,36,0.28)";
+                                                element4.style.borderColor = "rgba(223,225,229,0)";
+                                            }
+
+                                            function funkcja_cieni_inputa2() {
+                                                var element5 = document.getElementById("div_input_id");
+                                                element5.style.boxShadow = "";
+                                                element5.style.borderColor = "";
+                                            }
+                                        </script>
                                     </div>
                                     <div class="div3_form_1_a_1_a_klawiaturadiv">
                                         <div class="div3_form_1_a_1_a_klawiaturadiv2">
                                             <span class="div3_form_1_a_1_a_klawiaturadiv2_span">
                                         
                                             </span>
+                                        </div>
+                                        <div id="przycisk_x_id" class="divprzycisk_x">
+                                            <span class="divprzycisk_x_span" role="button" tabindex="0" onclick="funkcja_czyszczenia_inputa()">
+                                                <script>
+                                                    function funkcja_czyszczenia_inputa() {
+                                                      var t = document.getElementById("input_wyszukiwarki");
+                                                      t.value = "";
+                                                      t.focus();
+                                                      document.getElementById("przycisk_x_id").style.display = "none";
+                                                    }
+                                                </script>
+                                                <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                                                </svg>
+                                            </span>
+                                            <span class="kreskaPionowaSpan"></span>
                                         </div>
                                     </div>
                                 </div>

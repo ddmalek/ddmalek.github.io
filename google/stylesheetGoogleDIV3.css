@@ -111,6 +111,7 @@
     padding: 0 8px;
     width: 24px;
     line-height: 44px;
+    order: 1;
 }
 
 .div3_form_1_a_1_a_klawiaturadiv2_span
@@ -148,3 +149,43 @@
     display:inline-flex;
     margin: 0 auto 0 auto;
 }
+
+.divprzycisk_x{
+    display: flex;
+    padding: 0 4px 0 8px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 auto;
+    cursor: pointer;
+    border: 0;
+    background: transparent;
+    outline: none;
+    line-height: 44px;
+    order: 0;
+    display: none;
+}
+
+.divprzycisk_x_span{
+margin-right: 12px;
+display: flex;
+align-content: center;
+justify-content: center;
+height: 100%;
+color: #70757a;
+outline: none;
+fill: currentColor;
+line-height: 24px;
+position: relative;
+width: 24px;
+height: 24px;
+}
+
+.kreskaPionowaSpan{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    border-left: 1px solid #dfe1e5;
+    height: 65%;
+}
+
