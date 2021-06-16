@@ -1,160 +1,147 @@
 <!DOCTYPE html>
 <html itemscope="" itemtype="http://schema.org/WebPage" lang="pl-PL">
-    <head>
-        <title>Google Z3</title>
-        <meta charset="utf-8"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="stylesheetGoogleMainTags.css">
-        <link rel="stylesheet" href="stylesheetGoogleDIV1.css">
-        <link rel="stylesheet" href="stylesheetGoogleDIV2.css">
-        <link rel="stylesheet" href="stylesheetGoogleDIV3.css">
-        <link rel="stylesheet" href="stylesheetGoogleDIV4.css">
-        <link rel="stylesheet" href="stylesheetGoogleDIV5.css">
-        <link rel="shortcut icon" href="images/iconfinder-icon.svg">
 
-        <script>
-            function f_akt_przycisk_x() {
-              var przyciskX = document.getElementById("przycisk_x_id");
-              var input_search = document.getElementById("input_wyszukiwarki");
-                if (input_search.value!="") {
-                    przyciskX.style.display = "flex";
-                    funkcja_cieni_inputa();
-                    
-                   } else {
-                       przyciskX.style.display = "none";
-                       funkcja_cieni_inputa();
-                   }
-            }
+<head>
+    <title>Google Z3</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="stylesheetGoogleMainTags.css">
+    <link rel="stylesheet" href="stylesheetGoogleDIV1.css">
+    <link rel="stylesheet" href="stylesheetGoogleDIV2.css">
+    <link rel="stylesheet" href="stylesheetGoogleDIV3.css">
+    <link rel="stylesheet" href="stylesheetGoogleDIV4.css">
+    <link rel="stylesheet" href="stylesheetGoogleDIV5.css">
+    <link rel="shortcut icon" href="images/iconfinder-icon.svg">
+    <script src='jsGoogle.js'></script>
 
-            function funkcja_cieni_inputa(s) {
-                var element4 = document.getElementById("div_input_id");
-                var input_search = document.getElementById("input_wyszukiwarki");
-                if(s==1){
-                    element4.classList.remove("styledynamiczne2");
-                    element4.classList.add("styledynamiczne1");
-                }
-                else{
-                    if(input_search === document.activeElement){
-                    }
-                    else{
-                        element4.classList.remove("styledynamiczne1");
-                        element4.classList.add("styledynamiczne2");
-                    }
-                }
-            }
+</head>
 
-            function funkcja_czyszczenia_inputa(){
-                var t = document.getElementById("input_wyszukiwarki");
-                t.value = "";
-                t.focus();
-                document.getElementById("przycisk_x_id").style.display = "none";
-            }
-            
-        </script>
+<body>
 
-    </head>
-    <body>
-
-        <div id="wrapper">
-            <div class="div1">
-                <div class="div1_a">
-                    <div class="div1_a_1">
-                        <div class="div1_a_1_przycisk_gmail">
-                            <a class="przycisk_gmail" href="">Gmail</a>
-                        </div>
-                        <div class="div1_a_1_przycisk_grafika">
-                            <a class="przycisk_grafika" href="">Grafika</a>
-                        </div>
+    <div id="wrapper">
+        <div class="div1">
+            <div class="div1_a">
+                <div class="div1_a_1">
+                    <div class="div1_a_1_przycisk_gmail">
+                        <a class="przycisk_gmail" href="">Gmail</a>
                     </div>
-                    <div class="div1_a_2">
-                        <div class="div1_a_2_przycisk_kropki">
-                            <a class="przycisk_kropki colorpoints" href="">
-                                <svg focusable="flase" viewBox="0 0 24 24">
-                                    <path d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z"></path>
-                                </svg>
-                            </a>
-                        </div>
-                        <a class="przycisk_zaloguj" href="">Zaloguj się</a>   
+                    <div class="div1_a_1_przycisk_grafika">
+                        <a class="przycisk_grafika" href="">Grafika</a>
                     </div>
                 </div>
-            </div>
-            <div class="div2">
-                <div class="div2_1">
-                    <img class="div2_1_image" src="images/googleMainGraphic.png" alt="Google">
-                </div>
-            </div>
-            <div class="div3">
-                <form>
-                    <div>
-                        <div class="div3_form_1_a">
-                            <div id="div_input_id" class="div3_form_1_a_1">
-                                <div class="div3_form_1_a_1_a">
-                                    <div class="div3_form_1_a_1_a_lupa">
-                                        <div class="div3_form_1_a_1_a_lupa_1">
-                                            <span class="div3_form_1_a_1_a_lupa_1_span">
-                                                <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                                    <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
-                                                </svg>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="div3_form_1_a_1_a_inputdiv">
-                                        <input id="input_wyszukiwarki" class="div3_form_1_a_1_a_input" autofocus autocomplete="off" maxlength="500" type="text" name="search" title="Szukaj" oninput="f_akt_przycisk_x();" onfocus="funkcja_cieni_inputa(1);" onblur="funkcja_cieni_inputa(0);" onmouseover="funkcja_cieni_inputa(1);" onmouseout="funkcja_cieni_inputa(0);">
-                                        
-                                    </div>
-                                    <div class="div3_form_1_a_1_a_klawiaturadiv">
-                                        <div class="div3_form_1_a_1_a_klawiaturadiv2">
-                                            <span class="div3_form_1_a_1_a_klawiaturadiv2_span">
-                                        
-                                            </span>
-                                        </div>
-                                        <div id="przycisk_x_id" class="divprzycisk_x">
-                                            <span class="divprzycisk_x_span" role="button" tabindex="0" onclick="funkcja_czyszczenia_inputa()">
-                                                <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                                    <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
-                                                </svg>
-                                            </span>
-                                            <span class="kreskaPionowaSpan"></span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="div3_form_1_a_2">
-                                <div class="stylebuttons2th">
-                                    <div><input class="przycisk1" value="Szukaj w Google" aria-label="Szukaj w Google" name="przycisk1" type="button"></div>
-                                    <div><input class="przycisk2" value="Szczęśliwy traf" aria-label="Szczęśliwy traf" name="przycisk2" type="submit"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-            <div class="div4"></div>
-            <div class="div5">
-                <div class="div5_1">Polska</div>
-                <div class="div5_2">
-                    <div class="div5_2_a">
-                        <a class="link_div5_2_a" href="https://about.google/?utm_source=google-PL&amp;utm_medium=referral&amp;utm_campaign=hp-footer&amp;fg=1">O nas</a>
-                        <a class="link_div5_2_b" href="https://www.google.com/intl/pl_pl/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&amp;utm_source=google.com&amp;utm_medium=referral&amp;utm_campaign=google_hpafooter&amp;fg=1">Reklamuj się</a>
-                        <a class="link_div5_2_c" href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&amp;utm_source=google.com&amp;utm_medium=referral&amp;utm_campaign=google_hpbfooter&amp;fg=1">Dla firm</a>
-                        <a class="link_div5_2_d" href="https://google.com/search/howsearchworks/?fg=1">  Jak działa wyszukiwarka </a>
-                    </div>
-                    <div class="div5_2_b">
-                        <a class="link_div5_2_b" href="https://sustainability.google/intl/pl/commitments-europe/?utm_source=googlehpfooter&amp;utm_medium=housepromos&amp;utm_campaign=bottom-footer&amp;utm_content=">
-                            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAMAAAAiV0Z6AAAAPFBMVEVLoEN0wU6CzFKCzFKCzFKCzFKCzFJSo0MSczNDmkCCzFJPoUMTczNdr0gmgziCzFITczMTczMTczMTczPh00jOAAAAFHRSTlPF/+bIsms8Ad///hX+//5/tXw7aMEAx10AAACaSURBVHgBbc4HDoRQCATQ33tbvf9dF9QxaCT9UQaltLHOh/golXKhMs5Xqa0xU1lyoa2fXFyQOsDG38qsLy4TaV+sFislovyhPzLJJrBu6eQOtpW0LjbJkzTuTDLRVNKa3uxJI+VdiRqXSeu6GW+Qxi29eLIi8H7EsYrT42BD+mQtNO5JMjRuC4lSY8V4hsLX0egGijvUSEP9AbylEsOkeCgWAAAAAElFTkSuQmCC" class="listekz" alt="" data-atf="1">
-                            <span class="listektresc">Neutralność węglowa od 2007 roku</span>
+                <div class="div1_a_2">
+                    <div class="div1_a_2_przycisk_kropki">
+                        <a class="przycisk_kropki colorpoints" href="">
+                            <svg focusable="flase" viewBox="0 0 24 24">
+                                <path
+                                    d="M6,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM6,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM12,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM16,6c0,1.1 0.9,2 2,2s2,-0.9 2,-2 -0.9,-2 -2,-2 -2,0.9 -2,2zM12,8c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,14c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2zM18,20c1.1,0 2,-0.9 2,-2s-0.9,-2 -2,-2 -2,0.9 -2,2 0.9,2 2,2z">
+                                </path>
+                            </svg>
                         </a>
                     </div>
-                    <div class="div5_2_c">
-                        <a class="link_div5_2_b_1" href="https://policies.google.com/privacy?hl=pl&amp;fg=1">Prywatność</a>
-                        <a class="link_div5_2_b_2" href="https://policies.google.com/terms?hl=pl&amp;fg=1">Warunki</a>
-                        <div class="divprzyciskustawienia">
-                            <button class="przyciskustawienia">Ustawienia</button>
+                    <a class="przycisk_zaloguj" href="">Zaloguj się</a>
+                </div>
+            </div>
+        </div>
+        <div class="div2">
+            <div class="div2_1">
+                <img class="div2_1_image" src="images/googleMainGraphic.png" alt="Google">
+            </div>
+        </div>
+        <div class="div3">
+            <form>
+                <div>
+                    <div class="div3_form_1_a">
+                        <div id="div_input_id" class="div3_form_1_a_1">
+                            <div class="div3_form_1_a_1_a">
+                                <div class="div3_form_1_a_1_a_lupa">
+                                    <div class="div3_form_1_a_1_a_lupa_1">
+                                        <span class="div3_form_1_a_1_a_lupa_1_span">
+                                            <svg focusable="false" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="div3_form_1_a_1_a_inputdiv">
+                                    <input id="input_wyszukiwarki" class="div3_form_1_a_1_a_input" autofocus
+                                        autocomplete="off" maxlength="500" type="text" name="search" title="Szukaj"
+                                        oninput="f_akt_przycisk_x();" onfocus="funkcja_cieni_inputa(1);"
+                                        onblur="funkcja_cieni_inputa(0);" onmouseover="funkcja_cieni_inputa(1);"
+                                        onmouseout="funkcja_cieni_inputa(0);">
+
+                                </div>
+                                <div class="div3_form_1_a_1_a_klawiaturadiv">
+                                    <div class="div3_form_1_a_1_a_klawiaturadiv2">
+                                        <span class="div3_form_1_a_1_a_klawiaturadiv2_span">
+
+                                        </span>
+                                    </div>
+                                    <div id="przycisk_x_id" class="divprzycisk_x">
+                                        <span class="divprzycisk_x_span" role="button" tabindex="0"
+                                            onclick="funkcja_czyszczenia_inputa()">
+                                            <svg focusable="false" xmlns="http://www.w3.org/2000/svg"
+                                                viewBox="0 0 24 24">
+                                                <path
+                                                    d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                                </path>
+                                            </svg>
+                                        </span>
+                                        <span class="kreskaPionowaSpan"></span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+                        <div class="div3_form_1_a_2">
+                            <div class="stylebuttons2th">
+                                <div><input class="przycisk1" value="Szukaj w Google" aria-label="Szukaj w Google"
+                                        name="przycisk1" type="button"></div>
+                                <div><input class="przycisk2" value="Szczęśliwy traf" aria-label="Szczęśliwy traf"
+                                        name="przycisk2" type="submit"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="div4"></div>
+        <div class="div5">
+            <div class="div5_1">Polska</div>
+            <div class="div5_2">
+                <div class="div5_2_a">
+                    <a class="link_div5_2_a"
+                        href="https://about.google/?utm_source=google-PL&amp;utm_medium=referral&amp;utm_campaign=hp-footer&amp;fg=1">O
+                        nas</a>
+                    <a class="link_div5_2_b"
+                        href="https://www.google.com/intl/pl_pl/ads/?subid=ww-ww-et-g-awa-a-g_hpafoot1_1!o2&amp;utm_source=google.com&amp;utm_medium=referral&amp;utm_campaign=google_hpafooter&amp;fg=1">Reklamuj
+                        się</a>
+                    <a class="link_div5_2_c"
+                        href="https://www.google.com/services/?subid=ww-ww-et-g-awa-a-g_hpbfoot1_1!o2&amp;utm_source=google.com&amp;utm_medium=referral&amp;utm_campaign=google_hpbfooter&amp;fg=1">Dla
+                        firm</a>
+                    <a class="link_div5_2_d" href="https://google.com/search/howsearchworks/?fg=1"> Jak działa
+                        wyszukiwarka </a>
+                </div>
+                <div class="div5_2_b">
+                    <a class="link_div5_2_b"
+                        href="https://sustainability.google/intl/pl/commitments-europe/?utm_source=googlehpfooter&amp;utm_medium=housepromos&amp;utm_campaign=bottom-footer&amp;utm_content=">
+                        <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAYCAMAAAAiV0Z6AAAAPFBMVEVLoEN0wU6CzFKCzFKCzFKCzFKCzFJSo0MSczNDmkCCzFJPoUMTczNdr0gmgziCzFITczMTczMTczMTczPh00jOAAAAFHRSTlPF/+bIsms8Ad///hX+//5/tXw7aMEAx10AAACaSURBVHgBbc4HDoRQCATQ33tbvf9dF9QxaCT9UQaltLHOh/golXKhMs5Xqa0xU1lyoa2fXFyQOsDG38qsLy4TaV+sFislovyhPzLJJrBu6eQOtpW0LjbJkzTuTDLRVNKa3uxJI+VdiRqXSeu6GW+Qxi29eLIi8H7EsYrT42BD+mQtNO5JMjRuC4lSY8V4hsLX0egGijvUSEP9AbylEsOkeCgWAAAAAElFTkSuQmCC"
+                            class="listekz" alt="" data-atf="1">
+                        <span class="listektresc">Neutralność węglowa od 2007 roku</span>
+                    </a>
+                </div>
+                <div class="div5_2_c">
+                    <a class="link_div5_2_b_1" href="https://policies.google.com/privacy?hl=pl&amp;fg=1">Prywatność</a>
+                    <a class="link_div5_2_b_2" href="https://policies.google.com/terms?hl=pl&amp;fg=1">Warunki</a>
+                    <div class="divprzyciskustawienia">
+                        <button class="przyciskustawienia">Ustawienia</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</body>
 
-    </body>
 </html>
