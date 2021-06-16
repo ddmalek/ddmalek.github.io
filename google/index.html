@@ -12,8 +12,49 @@
         <link rel="stylesheet" href="stylesheetGoogleDIV5.css">
         <link rel="shortcut icon" href="images/iconfinder-icon.svg">
 
+        <script>
+            function f_akt_przycisk_x() {
+              var przyciskX = document.getElementById("przycisk_x_id");
+              var input_search = document.getElementById("input_wyszukiwarki");
+                if (input_search.value!="") {
+                    przyciskX.style.display = "flex";
+                    funkcja_cieni_inputa();
+                    
+                   } else {
+                       przyciskX.style.display = "none";
+                       funkcja_cieni_inputa();
+                   }
+            }
+
+            function funkcja_cieni_inputa(s) {
+                var element4 = document.getElementById("div_input_id");
+                var input_search = document.getElementById("input_wyszukiwarki");
+                if(s==1){
+                    element4.classList.remove("styledynamiczne2");
+                    element4.classList.add("styledynamiczne1");
+                }
+                else{
+                    if(input_search === document.activeElement){
+                    }
+                    else{
+                        element4.classList.remove("styledynamiczne1");
+                        element4.classList.add("styledynamiczne2");
+                    }
+                }
+            }
+
+            function funkcja_czyszczenia_inputa(){
+                var t = document.getElementById("input_wyszukiwarki");
+                t.value = "";
+                t.focus();
+                document.getElementById("przycisk_x_id").style.display = "none";
+            }
+            
+        </script>
+
     </head>
     <body>
+
         <div id="wrapper">
             <div class="div1">
                 <div class="div1_a">
@@ -58,33 +99,8 @@
                                         </div>
                                     </div>
                                     <div class="div3_form_1_a_1_a_inputdiv">
-                                        <input id="input_wyszukiwarki" class="div3_form_1_a_1_a_input" autofocus autocomplete="off" maxlength="500" type="text" name="search" title="Szukaj" oninput="f_akt_przycisk_x()" onfocus="funkcja_cieni_inputa()" onblur="funkcja_cieni_inputa2()">
-                                        <script>
-                                            function f_akt_przycisk_x() {
-                                              var przyciskX = document.getElementById("przycisk_x_id");
-                                              var input_search = document.getElementById("input_wyszukiwarki");
-                                                if (input_search.value!="") {
-                                                    przyciskX.style.display = "flex";
-                                                    funkcja_cieni_inputa();
-                                                    
-                                                   } else {
-                                                       przyciskX.style.display = "none";
-                                                       funkcja_cieni_inputa();
-                                                   }
-                                            }
-
-                                            function funkcja_cieni_inputa() {
-                                                var element4 = document.getElementById("div_input_id");
-                                                element4.style.boxShadow = "0px 1px 6px rgba(32,33,36,0.28)";
-                                                element4.style.borderColor = "rgba(223,225,229,0)";
-                                            }
-
-                                            function funkcja_cieni_inputa2() {
-                                                var element5 = document.getElementById("div_input_id");
-                                                element5.style.boxShadow = "none";
-                                                element5.style.border = "1px solid #dfe1e5";
-                                            }
-                                        </script>
+                                        <input id="input_wyszukiwarki" class="div3_form_1_a_1_a_input" autofocus autocomplete="off" maxlength="500" type="text" name="search" title="Szukaj" oninput="f_akt_przycisk_x();" onfocus="funkcja_cieni_inputa(1);" onblur="funkcja_cieni_inputa(0);" onmouseover="funkcja_cieni_inputa(1);" onmouseout="funkcja_cieni_inputa(0);">
+                                        
                                     </div>
                                     <div class="div3_form_1_a_1_a_klawiaturadiv">
                                         <div class="div3_form_1_a_1_a_klawiaturadiv2">
@@ -94,14 +110,6 @@
                                         </div>
                                         <div id="przycisk_x_id" class="divprzycisk_x">
                                             <span class="divprzycisk_x_span" role="button" tabindex="0" onclick="funkcja_czyszczenia_inputa()">
-                                                <script>
-                                                    function funkcja_czyszczenia_inputa() {
-                                                      var t = document.getElementById("input_wyszukiwarki");
-                                                      t.value = "";
-                                                      t.focus();
-                                                      document.getElementById("przycisk_x_id").style.display = "none";
-                                                    }
-                                                </script>
                                                 <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                                                     <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
                                                 </svg>
@@ -113,7 +121,7 @@
                             </div>
                             <div class="div3_form_1_a_2">
                                 <div class="stylebuttons2th">
-                                    <div><input class="przycisk1" value="Szukaj w Google" aria-label="Szukaj w Google" name="przycisk1" type="submit"></div>
+                                    <div><input class="przycisk1" value="Szukaj w Google" aria-label="Szukaj w Google" name="przycisk1" type="button"></div>
                                     <div><input class="przycisk2" value="Szczęśliwy traf" aria-label="Szczęśliwy traf" name="przycisk2" type="submit"></div>
                                 </div>
                             </div>
