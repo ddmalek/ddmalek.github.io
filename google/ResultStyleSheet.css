@@ -1,0 +1,145 @@
+.results{
+    display: none;
+}
+
+#wrapper{
+    width: 100%;
+}
+
+.doprzemieszczeniaformclass{
+    position: absolute;
+    left: 80px; 
+    top: 10px;
+    width: 690px;
+    max-width: 690px;
+}
+
+.classDivResults_1{
+    display: none;
+}
+
+.lupka_transformacja{
+    color:#4285f4; 
+    width:24px; 
+    height:24px; 
+    margin-left: 5px; 
+    cursor: pointer;
+}
+
+.div_wyniki_szukania{
+    font-family: arial,sans-serif;
+    font-size: 14px; 
+}
+
+.div_wynik_szukania{
+    flex-direction: column;
+    width: 600px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    margin-left: 180px;
+}
+
+.strzalka_dol{
+    width: 9px;
+    height: 9px;
+}
+
+.span_cite_1{
+    color: #202124;
+}
+
+.span_cite_2{
+    color: #5f6368;
+}
+
+.div_probka_wyniku{
+    word-wrap: break-word;
+    color: #4d5156;
+    line-height: 1.58;
+}
+
+.div_link_wyniku{
+    line-height: 1.58;
+}
+
+/* .naglowki_odsylacze{
+    font-size: 20px;
+    line-height: 1.3;
+} */
+
+.a_class{
+    color: #1a0dab;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 1.3;
+    margin: 6px 0 4px 0;
+    font-weight: normal;
+    display: inline-block;
+}
+.a_class:hover{
+    text-decoration: underline;
+}
+
+#strzalka_span{
+    margin-left: 7px;
+    cursor: pointer;
+}
+
+.gwiazdki{
+    height: 13px;
+    width: 65px;
+}
+
+.span_ocena{
+    color: #70757a;
+    line-height: 1.58;
+}
+
+.div_lista_rozwijana{
+    line-height: 20px;
+    color: #4d5156;
+    font-family: arial,sans-serif;
+    font-size: 14px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+    border-bottom: 1px solid #ebebeb;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.div_lista_rozwijana_main{
+    display: flex;
+    flex-direction: column;
+    border-top: 1px solid #ebebeb;
+    margin-top: 10px;
+}
+
+.span_strzalka_duza{
+    color: #70757a;
+    fill: currentColor;
+    height: 24px;
+    line-height: 24px;
+    width: 24px;
+}
+
+.niebieski_link_dolny{
+    color: #1a0dab;
+    cursor: pointer;
+}
+
+.niebieski_link_dolny:hover{
+    color: #1a0dab;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+#resultsSearch{
+    position: absolute;
+    top:190px;
+}
+
