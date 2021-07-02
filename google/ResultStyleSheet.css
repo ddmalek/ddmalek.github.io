@@ -14,9 +14,9 @@
     max-width: 690px;
 }
 
-.classDivResults_1{
+/* .classDivResults_1{
     display: none;
-}
+} */
 
 .lupka_transformacja{
     color:#4285f4; 
@@ -143,3 +143,26 @@
     top:190px;
 }
 
+.transf_div1{
+    position: absolute; 
+    top: 25px; 
+    right: 15px;
+}
+
+.tranf_zdjGoogle{
+    width:92px; 
+    height:30px; 
+    margin-left: 5px; 
+    cursor: pointer; 
+    position: absolute; 
+    top: 35px; 
+    left: 20px;
+}
+
+.tranf_lupa{
+    order:122;
+}
+
+.visble{
+    display: flex;
+}
