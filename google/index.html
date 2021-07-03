@@ -15,6 +15,7 @@
     <link rel="shortcut icon" href="images/iconfinder-icon.svg">
     <script src='jsGoogle.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="cities.js"></script>
 
 </head>
 
@@ -47,7 +48,8 @@
             </div>
             <div class="div2">
                 <div class="div2_1">
-                    <a href="index.html"><img class="div2_1_image" id="google_image" v-bind:class="{ tranf_zdjGoogle: isActive }" src="images/googleMainGraphic.png"
+                    <a href="index.html"><img class="div2_1_image" id="google_image"
+                            v-bind:class="{ tranf_zdjGoogle: isActive }" src="images/googleMainGraphic.png"
                             alt="Google"></a>
                 </div>
             </div>
@@ -59,7 +61,8 @@
                                 <div class="div3_form_1_a_1_a">
                                     <div class="div3_form_1_a_1_a_lupa" v-bind:class="{ tranf_lupa: isActive }">
                                         <div class="div3_form_1_a_1_a_lupa_1">
-                                            <span class="div3_form_1_a_1_a_lupa_1_span" id="spanlupaid"  v-bind:class="{ lupka_transformacja: isActive }">
+                                            <span class="div3_form_1_a_1_a_lupa_1_span" id="spanlupaid"
+                                                v-bind:class="{ lupka_transformacja: isActive }">
                                                 <svg id="svglupaid" focusable="false" xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 24 24">
                                                     <path
@@ -70,13 +73,12 @@
                                         </div>
                                     </div>
                                     <div class="div3_form_1_a_1_a_inputdiv" id="wyszukiwarka">
-                                        <input id="input_wyszukiwarki" class="div3_form_1_a_1_a_input" v-on:input="tranformacja2"
-                                            v-model="googleSearch" autofocus autocomplete="off"
-                                            maxlength="500" type="text" name="search" title="Szukaj"
+                                        <input id="input_wyszukiwarki" class="div3_form_1_a_1_a_input"
+                                            v-on:input="tranformacja2" v-model="googleSearch" autofocus
+                                            autocomplete="off" maxlength="500" type="text" name="search" title="Szukaj"
                                             oninput="f_akt_przycisk_x();" onfocus="funkcja_cieni_inputa(1);"
                                             onblur="funkcja_cieni_inputa(0);" onmouseover="funkcja_cieni_inputa(1);"
-                                            onmouseout="funkcja_cieni_inputa(0);" onkeydown="funkcjaEnter(event);">
-
+                                            onmouseout="funkcja_cieni_inputa(0);">
                                     </div>
                                     <div class="div3_form_1_a_1_a_klawiaturadiv">
                                         <div class="div3_form_1_a_1_a_klawiaturadiv2">
@@ -85,7 +87,8 @@
                                             </span>
                                         </div>
                                         <div id="przycisk_x_id" class="divprzycisk_x">
-                                            <span class="divprzycisk_x_span" role="button" tabindex="0" v-on:click="wyczyscInput" onclick="funkcja_czyszczenia_inputa();">
+                                            <span class="divprzycisk_x_span" role="button" tabindex="0"
+                                                v-on:click="wyczyscInput" onclick="funkcja_czyszczenia_inputa();">
                                                 <svg focusable="false" xmlns="http://www.w3.org/2000/svg"
                                                     viewBox="0 0 24 24">
                                                     <path
@@ -152,8 +155,15 @@
         <!-- tu nowy div dla wynikow szukania -->
         <div id="resultsSearch" v-bind:class="{ results: !isActive }" v-bind:class="{ visible: !isActive }">
             <div class="div_wyniki_szukania">
+                <div class="div_lista_m">
+                    <hr style="color:rgb(238, 237, 237);">
+                    <div class="div_lista_miast" v-for="city in filteredCities" :key="city.name"
+                        z-index="122">
+                        {{ city.name }}
+                    </div>
+                </div>
                 <img src="images/pasekopcji.png"
-                    style="height: 80px; width: 700px; position: absolute; top:-100px; left: 170px;">
+                    style="height: 80px; width: 700px; position: absolute; top:-100px; left: 170px; z-index:-1">
                 <div class="div_wynik_szukania">
                     <div class="div_cite_linku_strony">
                         <span class="span_cite_1">https://support.google.com<span class="span_cite_2"> › websearch ›
@@ -298,28 +308,36 @@
             data: {
                 googleSearch: '',
                 isActive: false,
+                cities: window.cities
             },
             methods: {
                 szukajvjs: function () {
-                    if(this.googleSearch != ''){
-                    this.isActive = !this.isActive
+                    if (this.googleSearch != '') {
+                        this.isActive = !this.isActive
                     }
                 },
 
-                tranformacja2: function(){
-                    if(this.googleSearch != ''){
-                    this.isActive = true
-                    } 
-                    else if(this.googleSearch == ''){
+                tranformacja2: function () {
+                    if (this.googleSearch != '') {
+                        this.isActive = true
+                    }
+                    else if (this.googleSearch == '') {
+                        this.isActive = false
+                    }
+                },
+
+                wyczyscInput: function () {
                     this.isActive = false
-                    }  
-                }, 
-
-                wyczyscInput: function(){
-                    this.isActive = false 
                     this.googleSearch = ''
-                } 
-
+                }
+            },
+            computed:
+            {
+                filteredCities() {
+                    return this.cities.filter((city) => {
+                        return city.name.toLowerCase().includes(this.googleSearch.toLowerCase());
+                    }).slice(0, 10);
+                }
             }
         })
 
