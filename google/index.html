@@ -78,7 +78,7 @@
                                             autocomplete="off" maxlength="500" type="text" name="search" title="Szukaj"
                                             oninput="f_akt_przycisk_x();" onfocus="funkcja_cieni_inputa(1);"
                                             onblur="funkcja_cieni_inputa(0);" onmouseover="funkcja_cieni_inputa(1);"
-                                            onmouseout="funkcja_cieni_inputa(0);">
+                                            onmouseout="funkcja_cieni_inputa(0);" v-on:keyup.enter="szukajvjs" ref="search">
                                     </div>
                                     <div class="div3_form_1_a_1_a_klawiaturadiv">
                                         <div class="div3_form_1_a_1_a_klawiaturadiv2">
@@ -101,13 +101,24 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="div3_form_1_a_2 dowylaczeniadlaresults" v-bind:class="{ results: isActive }">
-                                <div class="stylebuttons2th">
-                                    <div><input class="przycisk1" id="przyciskSzukaj" v-on:click="szukajvjs"
-                                            value="Szukaj w Google" aria-label="Szukaj w Google" name="przycisk1"
-                                            type="button" onclick="funkcjaSzukaj();"></div>
-                                    <div><input class="przycisk2" value="Szczęśliwy traf" aria-label="Szczęśliwy traf"
-                                            name="przycisk2" type="button"></div>
+                            <div v-bind:class="[{ div_lista_m: isActive2 },{ mini_transformacja: isActive2 }]">
+                                <div class="wysuwanie_autokompletera"
+                                    v-bind:class="{ wysuwanie_autokompletera2: isActive2 }">
+                                    <div style="border-top: 1px solid #e8eaed;"></div>
+                                    <div class="div_lista_miast" v-for="city in filteredCities" :key="city.name"
+                                        z-index="122" v-on:click="podstaw(city.name)">
+                                        <span class="bold" v-html="wynik_pogrubienia(city.name)"></span>
+                                    </div>
+                                </div>
+                                <div class="div3_form_1_a_2 dowylaczeniadlaresults"
+                                    v-bind:class="{ results: isActive }">
+                                    <div class="stylebuttons2th">
+                                        <div><input class="przycisk1" id="przyciskSzukaj" v-on:click="szukajvjs"
+                                                value="Szukaj w Google" aria-label="Szukaj w Google" name="przycisk1"
+                                                type="button"></div>
+                                        <div><input class="przycisk2" value="Szczęśliwy traf"
+                                                aria-label="Szczęśliwy traf" name="przycisk2" type="button"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -155,13 +166,6 @@
         <!-- tu nowy div dla wynikow szukania -->
         <div id="resultsSearch" v-bind:class="{ results: !isActive }" v-bind:class="{ visible: !isActive }">
             <div class="div_wyniki_szukania">
-                <div class="div_lista_m">
-                    <hr style="color:rgb(238, 237, 237);">
-                    <div class="div_lista_miast" v-for="city in filteredCities" :key="city.name"
-                        z-index="122">
-                        {{ city.name }}
-                    </div>
-                </div>
                 <img src="images/pasekopcji.png"
                     style="height: 80px; width: 700px; position: absolute; top:-100px; left: 170px; z-index:-1">
                 <div class="div_wynik_szukania">
@@ -308,27 +312,47 @@
             data: {
                 googleSearch: '',
                 isActive: false,
+                isActive2: false,
                 cities: window.cities
             },
             methods: {
                 szukajvjs: function () {
-                    if (this.googleSearch != '') {
+                    if (this.googleSearch != '' && !this.isActive) {
                         this.isActive = !this.isActive
+                        this.isActive2 = !this.isActive
                     }
                 },
 
+                podstaw: function (miasto) {
+                    this.googleSearch = miasto
+                    this.szukajvjs()
+                    this.isActive2 = !this.isActive
+                },
+
                 tranformacja2: function () {
-                    if (this.googleSearch != '') {
-                        this.isActive = true
-                    }
-                    else if (this.googleSearch == '') {
+                    if (this.googleSearch == '') {
                         this.isActive = false
+                        this.isActive2 = false
                     }
+                    else if (this.googleSearch != '') {
+                        this.isActive2 = true
+                    }
+
                 },
 
                 wyczyscInput: function () {
                     this.isActive = false
                     this.googleSearch = ''
+                    this.isActive2 = false
+                },
+
+                wynik_pogrubienia: function (element1) {
+                    slowo = element1.match(RegExp(this.googleSearch, "gi"));
+                    zamien = '';
+                    slowo.forEach(wynik => {
+                        zamien = element1.replace(RegExp(this.googleSearch, "gi"), `<span class="nobold">${element1.match(RegExp(this.googleSearch, "gi"))[0]}</span>`);
+                    })
+                    return zamien;
                 }
             },
             computed:
