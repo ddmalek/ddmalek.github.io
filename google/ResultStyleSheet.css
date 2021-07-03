@@ -169,9 +169,10 @@
 
 .div_lista_miast{
     display: flex !important;
-    flex-direction: column;
+    flex-direction: row;
     z-index: 122;
-    padding: 8px;
+    padding: 4px;
+    margin: 4px;
     font-family: arial,sans-serif;
     font-size: 16px;
     color: #212121;
