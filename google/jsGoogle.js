@@ -30,7 +30,6 @@ function funkcja_cieni_inputa(s) {
 
 function funkcja_czyszczenia_inputa() {
     var t = document.getElementById("input_wyszukiwarki");
-    t.value = "";
     t.focus();
     document.getElementById("przycisk_x_id").style.display = "none";
 }

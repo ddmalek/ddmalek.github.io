@@ -21,7 +21,7 @@
 
 <body>
     <div id="wrappermain" style="height: 100%; width: 100%;">
-        <div id="wrapper" class="divwrapper">
+        <div id="wrapper" class="divwrapper" v-on:click="traceniefokusu">
             <div class="div1">
                 <div class="div1_a">
                     <div class="div1_a_1  dowylaczeniadlaresults" v-bind:class="{ results: isActive }">
@@ -53,87 +53,88 @@
                             alt="Google"></a>
                 </div>
             </div>
-            <div class="div3">
-                <div id="doprzemieszczeniaform" v-bind:class="{ doprzemieszczeniaformclass: isActive }">
-                    <div>
-                        <div class="div3_form_1_a" v-bind:class="{ doprzemieszczeniaformclass: isActive }">
-                            <div id="div_input_id" class="div3_form_1_a_1">
-                                <div class="div3_form_1_a_1_a">
-                                    <div class="div3_form_1_a_1_a_lupa" v-bind:class="{ tranf_lupa: isActive }">
-                                        <div class="div3_form_1_a_1_a_lupa_1">
-                                            <span class="div3_form_1_a_1_a_lupa_1_span" id="spanlupaid"
-                                                v-bind:class="{ lupka_transformacja: isActive }">
-                                                <svg id="svglupaid" focusable="false" xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 24 24">
-                                                    <path
-                                                        d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
-                                                    </path>
-                                                </svg>
-                                            </span>
-                                        </div>
-                                    </div>
-                                    <div class="div3_form_1_a_1_a_inputdiv" id="wyszukiwarka">
-                                        <input id="input_wyszukiwarki" class="div3_form_1_a_1_a_input"
-                                            v-on:input="tranformacja2" v-model="googleSearch" autofocus
-                                            autocomplete="off" maxlength="500" type="text" name="search" title="Szukaj"
-                                            oninput="f_akt_przycisk_x();" onfocus="funkcja_cieni_inputa(1);"
-                                            onblur="funkcja_cieni_inputa(0);" onmouseover="funkcja_cieni_inputa(1);"
-                                            onmouseout="funkcja_cieni_inputa(0);" v-on:keyup.enter="szukajvjs" ref="search">
-                                    </div>
-                                    <div class="div3_form_1_a_1_a_klawiaturadiv">
-                                        <div class="div3_form_1_a_1_a_klawiaturadiv2">
-                                            <span class="div3_form_1_a_1_a_klawiaturadiv2_span">
+            <div class="div3" id="doprzemieszczeniaform" v-bind:class="{ doprzemieszczeniaformclass: isActive }">
 
-                                            </span>
-                                        </div>
-                                        <div id="przycisk_x_id" class="divprzycisk_x">
-                                            <span class="divprzycisk_x_span" role="button" tabindex="0"
-                                                v-on:click="wyczyscInput" onclick="funkcja_czyszczenia_inputa();">
-                                                <svg focusable="false" xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 24 24">
-                                                    <path
-                                                        d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
-                                                    </path>
-                                                </svg>
-                                            </span>
-                                            <span class="kreskaPionowaSpan"></span>
-                                        </div>
-                                    </div>
+
+                <div class="div3_form_1_a" v-bind:class="{ doprzemieszczeniaformclass: isActive }">
+                    <div id="div_input_id" class="div3_form_1_a_1"
+                        v-bind:class="{ zakrzywienie_dwoch_rogow: isActive2, styledynamiczne1: isActive2}">
+                        <div class="div3_form_1_a_1_a">
+                            <div class="div3_form_1_a_1_a_lupa" v-bind:class="{ tranf_lupa: isActive }">
+                                <div class="div3_form_1_a_1_a_lupa_1">
+                                    <span class="div3_form_1_a_1_a_lupa_1_span" id="spanlupaid"
+                                        v-bind:class="{ lupka_transformacja: isActive }">
+                                        <svg id="svglupaid" focusable="false" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24">
+                                            <path
+                                                d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                                            </path>
+                                        </svg>
+                                    </span>
                                 </div>
                             </div>
-                            <div v-bind:class="[{ div_lista_m: isActive2 },{ mini_transformacja: isActive2 }]">
-                                <div class="wysuwanie_autokompletera"
-                                    v-bind:class="{ wysuwanie_autokompletera2: isActive2 }">
-                                    <div style="border-top: 1px solid #e8eaed;"></div>
-                                    <div class="div_lista_miast" v-for="city in filteredCities" :key="city.name"
-                                        z-index="122" v-on:click="podstaw(city.name)">
-                                        
-                                            <span class="div3_form_1_a_1_a_lupa_1_span" style="margin: 0 5px 0 0; padding: 0 0 2px;">
-                                                <svg focusable="false" xmlns="http://www.w3.org/2000/svg"
-                                                    viewBox="0 0 24 24">
-                                                    <path
-                                                        d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
-                                                    </path>
-                                                </svg>
-                                            </span>
-                                       
-                                        <span class="bold" v-html="wynik_pogrubienia(city.name)"></span>
-                                    </div>
+                            <div class="div3_form_1_a_1_a_inputdiv" id="wyszukiwarka">
+                                <input id="input_wyszukiwarki" class="div3_form_1_a_1_a_input"
+                                    v-on:input="tranformacja2" v-model="googleSearch" autofocus autocomplete="off"
+                                    maxlength="500" type="text" name="search" title="Szukaj"
+                                    oninput="f_akt_przycisk_x();" onfocus="funkcja_cieni_inputa(1);"
+                                    onblur="funkcja_cieni_inputa(0);" onmouseover="funkcja_cieni_inputa(1);"
+                                    onmouseout="funkcja_cieni_inputa(0);" v-on:keyup.enter="szukajvjs"
+                                    @keyup.down="dzialanie_strzalka_dol()" @keyup.up="dzialanie_strzalka_gora()" v-focus="vfokus">
+                            </div>
+                            <div class="div3_form_1_a_1_a_klawiaturadiv">
+                                <div class="div3_form_1_a_1_a_klawiaturadiv2">
+                                    <span class="div3_form_1_a_1_a_klawiaturadiv2_span">
+
+                                    </span>
                                 </div>
-                                <div class="div3_form_1_a_2 dowylaczeniadlaresults"
-                                    v-bind:class="{ results: isActive }">
-                                    <div class="stylebuttons2th">
-                                        <div><input class="przycisk1" id="przyciskSzukaj" v-on:click="szukajvjs"
-                                                value="Szukaj w Google" aria-label="Szukaj w Google" name="przycisk1"
-                                                type="button"></div>
-                                        <div><input class="przycisk2" value="Szczęśliwy traf"
-                                                aria-label="Szczęśliwy traf" name="przycisk2" type="button"></div>
-                                    </div>
+                                <div id="przycisk_x_id" class="divprzycisk_x">
+                                    <span class="divprzycisk_x_span" role="button" tabindex="0"
+                                        v-on:click="wyczyscInput" onclick="funkcja_czyszczenia_inputa();"
+                                        ref="afterClick">
+                                        <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path
+                                                d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z">
+                                            </path>
+                                        </svg>
+                                    </span>
+                                    <span class="kreskaPionowaSpan"></span>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <div v-bind:class="[{ div_lista_m: isActive2 },{ mini_transformacja: isActive2 }]">
+                        <div class="wysuwanie_autokompletera" v-bind:class="{ wysuwanie_autokompletera2: isActive2 }">
+                            <div style="border-top: 1px solid #e8eaed; margin: 0 0 10px 0;"></div>
+                            <div class="div_lista_miast" v-for="city in filteredCities" :key="city.name" z-index="122"
+                                v-on:click="podstaw(city.name)"
+                                v-bind:class="{ klasa_podswietlenia_strzalka_dol: isActive3 }" @mouseover ="mouseoverdivresults()">
+
+                                <span class="div3_form_1_a_1_a_lupa_1_span"
+                                    style="margin: 0 5px 0 0; padding: 0 0 2px;">
+                                    <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                        <path
+                                            d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z">
+                                        </path>
+                                    </svg>
+                                </span>
+
+                                <span class="bold" v-html="wynik_pogrubienia(city.name)"></span>
+                            </div>
+                        </div>
+                        <div class="div3_form_1_a_2 dowylaczeniadlaresults" v-bind:class="{ results: isActive }">
+                            <div class="stylebuttons2th">
+                                <div><input class="przycisk1" id="przyciskSzukaj" v-on:click="szukajvjs"
+                                        value="Szukaj w Google" aria-label="Szukaj w Google" name="przycisk1"
+                                        type="button"></div>
+                                <div><input class="przycisk2" value="Szczęśliwy traf" aria-label="Szczęśliwy traf"
+                                        name="przycisk2" type="button"></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
+
             </div>
             <div class="div4 dowylaczeniadlaresults" v-bind:class="{ results: isActive }"></div>
             <div class="div5 dowylaczeniadlaresults" v-bind:class="{ results: isActive }">
@@ -174,7 +175,7 @@
 
         </div>
         <!-- tu nowy div dla wynikow szukania -->
-        <div id="resultsSearch" v-bind:class="{ results: !isActive }" v-bind:class="{ visible: !isActive }">
+        <div id="resultsSearch" v-bind:class="{ results: !isActive, visible: !isActive }">
             <div class="div_wyniki_szukania">
                 <img src="images/pasekopcji.png"
                     style="height: 80px; width: 700px; position: absolute; top:-100px; left: 170px; z-index:-1">
@@ -323,29 +324,97 @@
                 googleSearch: '',
                 isActive: false,
                 isActive2: false,
-                cities: window.cities
+                cities: window.cities,
+                isActive3: false,
+                fokusinput: true,
+                vfokus: true,
+                licznik: 0,
+                licznik2: 0,
+            },
+            directives: {
+                focus: {
+                    // directive definition
+                    inserted: function (el44) {
+                        el44.focus()
+                    }
+                }
             },
             methods: {
                 szukajvjs: function () {
                     if (this.googleSearch != '' && !this.isActive) {
+                        var r = document.getElementsByClassName("klasa_podswietlenia_strzalka_dol")
+                        if(r.length != 0){
+                        this.googleSearch = r[0].innerText;;
+                        }
                         this.isActive = !this.isActive
                         this.isActive2 = !this.isActive
+                        input_wyszukiwarki.blur()
+                        this.licznik = 0;
+
                     }
+                },
+
+                mouseoverdivresults: function() {
+                    var listamiast = document.getElementsByClassName("div_lista_miast");
+                    for(i = 0; i < listamiast.length; i++){
+                    listamiast[i].classList.remove("klasa_podswietlenia_strzalka_dol");
+                    }
+                    this.licznik = 0
+                },
+
+                traceniefokusu: function () {
+                    this.isActive1 = false
+                    this.isActive2 = false
+                    this.licznik = 0;
                 },
 
                 podstaw: function (miasto) {
                     this.googleSearch = miasto
                     this.szukajvjs()
                     this.isActive2 = !this.isActive
+                    this.licznik = 0;
+                },
+
+                dzialanie_strzalka_dol: function (licznik) {
+                    // this.isActive3 = true
+                    var listamiast = document.getElementsByClassName("div_lista_miast");
+                    var z = listamiast.length;
+                    if(this.licznik == 0){
+                        listamiast[this.licznik].classList.add("klasa_podswietlenia_strzalka_dol");
+                    }
+                    else if(this.licznik == z){
+                    listamiast[0].classList.add("klasa_podswietlenia_strzalka_dol");
+                    listamiast[(z - 1)].classList.remove("klasa_podswietlenia_strzalka_dol");
+                    }
+
+                    else{
+                    listamiast[this.licznik].classList.add("klasa_podswietlenia_strzalka_dol");
+                    listamiast[this.licznik - 1].classList.remove("klasa_podswietlenia_strzalka_dol");
+                    }
+                    
+                    // this.googleSearch = listamiast[this.licznik].innerText;
+                    if(this.licznik < z){
+                        this.licznik = this.licznik +1;
+                    
+                    }
+                    else{
+                        this.licznik = 1;
+                    }
+                },
+
+                dzialanie_strzalka_gora: function (licznik2) {
+                    // this.isActive3 = true
                 },
 
                 tranformacja2: function () {
                     if (this.googleSearch == '') {
                         this.isActive = false
                         this.isActive2 = false
+                        this.licznik = 0
                     }
                     else if (this.googleSearch != '') {
                         this.isActive2 = true
+                        this.licznik = 0
                     }
 
                 },
@@ -354,23 +423,24 @@
                     this.isActive = false
                     this.googleSearch = ''
                     this.isActive2 = false
+                    this.licznik = 0;
                 },
 
                 wynik_pogrubienia: function (element1) {
-                    slowo = element1.match(RegExp(this.googleSearch, "gi"));
-                    zamien = '';
+                    slowo = element1.match(RegExp(this.googleSearch, "gi"))
+                    zamien = ''
                     slowo.forEach(wynik => {
-                        zamien = element1.replace(RegExp(this.googleSearch, "gi"), `<span class="nobold">${element1.match(RegExp(this.googleSearch, "gi"))[0]}</span>`);
+                        zamien = element1.replace(RegExp(this.googleSearch, "gi"), `<span class="nobold">${element1.match(RegExp(this.googleSearch, "gi"))[0]}</span>`)
                     })
-                    return zamien;
+                    return zamien
                 }
             },
             computed:
             {
                 filteredCities() {
                     return this.cities.filter((city) => {
-                        return city.name.toLowerCase().includes(this.googleSearch.toLowerCase());
-                    }).slice(0, 10);
+                        return city.name.toLowerCase().includes(this.googleSearch.toLowerCase())
+                    }).slice(0, 10)
                 }
             }
         })

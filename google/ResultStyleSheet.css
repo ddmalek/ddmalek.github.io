@@ -171,18 +171,18 @@
     display: flex !important;
     flex-direction: row;
     z-index: 122;
-    padding: 4px;
-    margin: 4px;
+    padding: 8px;
     font-family: arial,sans-serif;
     font-size: 16px;
     color: #212121;
+    cursor:default;
 
 }
 
 .div_lista_m{
     /* display: none; */
-    margin: 5px; 
-    padding: 5px; 
+    margin: 5px auto; 
+    padding: 5px 0 5px 0; 
     align-self:center;
     background: white;
     /* position: absolute; 
@@ -201,7 +201,7 @@
 
 .mini_transformacja{
     position: relative;
-    top: -20px;
+    top: -7px;
 }
 
 .wysuwanie_autokompletera2{
@@ -224,3 +224,12 @@
     border-radius: 24px 24px 0 0;
     
 } */
+
+.klasa_podswietlenia_strzalka_dol{
+    background: #eee;
+}
+
+.zakrzywienie_dwoch_rogow{
+    border-radius: 24px 24px 0 0;
+    border-bottom: none;
+}
