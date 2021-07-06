@@ -20,7 +20,7 @@
 </head>
 
 <body>
-    <div id="wrappermain" style="height: 100%; width: 100%;">
+    <div id="wrappermain" style="height: 100%; width: 100%;" v-on:click="traceniefokusu">
         <div id="wrapper" class="divwrapper" v-on:click="traceniefokusu">
             <div class="div1">
                 <div class="div1_a">
@@ -343,16 +343,26 @@
             },
             methods: {
                 szukajvjs: function () {
+                    var r = document.getElementsByClassName("klasa_podswietlenia_strzalka_dol")
                     if (this.googleSearch != '' && !this.isActive) {
-                        var r = document.getElementsByClassName("klasa_podswietlenia_strzalka_dol")
                         if (r.length != 0) {
-                            this.googleSearch = r[0].innerText;;
+                            this.googleSearch = r[0].innerText;
                         }
                         this.isActive = !this.isActive
                         this.isActive2 = !this.isActive
                         input_wyszukiwarki.blur()
                         this.licznik = 0;
+                        r[0].classList.remove("klasa_podswietlenia_strzalka_dol");
 
+                    }
+                    else if(this.googleSearch != '' && this.isActive){
+                        if (r.length != 0) {
+                            this.googleSearch = r[0].innerText;
+                        }
+                        this.isActive2 = !this.isActive
+                        input_wyszukiwarki.blur()
+                        this.licznik = 0;
+                        r[0].classList.remove("klasa_podswietlenia_strzalka_dol");
                     }
                 },
 
