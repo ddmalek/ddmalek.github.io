@@ -80,7 +80,8 @@
                                     oninput="f_akt_przycisk_x();" onfocus="funkcja_cieni_inputa(1);"
                                     onblur="funkcja_cieni_inputa(0);" onmouseover="funkcja_cieni_inputa(1);"
                                     onmouseout="funkcja_cieni_inputa(0);" v-on:keyup.enter="szukajvjs"
-                                    @keyup.down="dzialanie_strzalka_dol()" @keyup.up="dzialanie_strzalka_gora()" v-focus="vfokus">
+                                    @keyup.down="dzialanie_strzalka_dol()" @keyup.up="dzialanie_strzalka_gora()"
+                                    v-focus="vfokus">
                             </div>
                             <div class="div3_form_1_a_1_a_klawiaturadiv">
                                 <div class="div3_form_1_a_1_a_klawiaturadiv2">
@@ -108,7 +109,8 @@
                             <div style="border-top: 1px solid #e8eaed; margin: 0 0 10px 0;"></div>
                             <div class="div_lista_miast" v-for="city in filteredCities" :key="city.name" z-index="122"
                                 v-on:click="podstaw(city.name)"
-                                v-bind:class="{ klasa_podswietlenia_strzalka_dol: isActive3 }" @mouseover ="mouseoverdivresults()">
+                                v-bind:class="{ klasa_podswietlenia_strzalka_dol: isActive3 }"
+                                @mouseover="mouseoverdivresults()">
 
                                 <span class="div3_form_1_a_1_a_lupa_1_span"
                                     style="margin: 0 5px 0 0; padding: 0 0 2px;">
@@ -343,8 +345,8 @@
                 szukajvjs: function () {
                     if (this.googleSearch != '' && !this.isActive) {
                         var r = document.getElementsByClassName("klasa_podswietlenia_strzalka_dol")
-                        if(r.length != 0){
-                        this.googleSearch = r[0].innerText;;
+                        if (r.length != 0) {
+                            this.googleSearch = r[0].innerText;;
                         }
                         this.isActive = !this.isActive
                         this.isActive2 = !this.isActive
@@ -354,10 +356,10 @@
                     }
                 },
 
-                mouseoverdivresults: function() {
+                mouseoverdivresults: function () {
                     var listamiast = document.getElementsByClassName("div_lista_miast");
-                    for(i = 0; i < listamiast.length; i++){
-                    listamiast[i].classList.remove("klasa_podswietlenia_strzalka_dol");
+                    for (i = 0; i < listamiast.length; i++) {
+                        listamiast[i].classList.remove("klasa_podswietlenia_strzalka_dol");
                     }
                     this.licznik = 0
                 },
@@ -375,35 +377,60 @@
                     this.licznik = 0;
                 },
 
-                dzialanie_strzalka_dol: function (licznik) {
+                dzialanie_strzalka_dol: function () {
                     // this.isActive3 = true
                     var listamiast = document.getElementsByClassName("div_lista_miast");
                     var z = listamiast.length;
-                    if(this.licznik == 0){
+                    if (this.licznik == 0) {
                         listamiast[this.licznik].classList.add("klasa_podswietlenia_strzalka_dol");
                     }
-                    else if(this.licznik == z){
-                    listamiast[0].classList.add("klasa_podswietlenia_strzalka_dol");
-                    listamiast[(z - 1)].classList.remove("klasa_podswietlenia_strzalka_dol");
+                    else if (this.licznik == z) {
+                        listamiast[0].classList.add("klasa_podswietlenia_strzalka_dol");
+                        listamiast[(z - 1)].classList.remove("klasa_podswietlenia_strzalka_dol");
                     }
 
-                    else{
-                    listamiast[this.licznik].classList.add("klasa_podswietlenia_strzalka_dol");
-                    listamiast[this.licznik - 1].classList.remove("klasa_podswietlenia_strzalka_dol");
+                    else {
+                        listamiast[this.licznik].classList.add("klasa_podswietlenia_strzalka_dol");
+                        listamiast[this.licznik - 1].classList.remove("klasa_podswietlenia_strzalka_dol");
                     }
-                    
+
                     // this.googleSearch = listamiast[this.licznik].innerText;
-                    if(this.licznik < z){
-                        this.licznik = this.licznik +1;
-                    
+                    if (this.licznik < z) {
+                        this.licznik = this.licznik + 1;
+
                     }
-                    else{
+                    else {
                         this.licznik = 1;
                     }
                 },
 
-                dzialanie_strzalka_gora: function (licznik2) {
-                    // this.isActive3 = true
+                dzialanie_strzalka_gora: function () {
+                    var listamiast = document.getElementsByClassName("div_lista_miast");
+                    var z = listamiast.length - 1;
+                    var o = true;
+                    
+                    for (i = 0; i <= z; i++) {
+                        if (o = listamiast[i].classList.contains("klasa_podswietlenia_strzalka_dol")) {
+                            this.licznik = i;
+                            if (this.licznik > 0) {
+                                listamiast[(this.licznik - 1)].classList.add("klasa_podswietlenia_strzalka_dol");
+                                listamiast[this.licznik].classList.remove("klasa_podswietlenia_strzalka_dol");
+                                break;
+                            }
+                            else{
+                                this.licznik = z;
+                                listamiast[this.licznik].classList.add("klasa_podswietlenia_strzalka_dol");
+                                listamiast[0].classList.remove("klasa_podswietlenia_strzalka_dol");
+                                break;
+                            }
+                        }
+                        else{
+                            this.licznik = z;
+                        }
+                    }
+                    if(!o){
+                        listamiast[z].classList.add("klasa_podswietlenia_strzalka_dol");
+                    }
                 },
 
                 tranformacja2: function () {
