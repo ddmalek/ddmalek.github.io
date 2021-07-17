@@ -77,7 +77,7 @@
                             </div>
                             <div class="div3_form_1_a_1_a_inputdiv" id="wyszukiwarka">
                                 <input id="input_wyszukiwarki" class="div3_form_1_a_1_a_input"
-                                    v-on:input="tranformacja2" v-model="googleSearch" autofocus autocomplete="off"
+                                    v-on:input="tranformacja2" v-model="googleSearch" debounce="600" autofocus autocomplete="off"
                                     maxlength="500" type="text" name="search" title="Szukaj"
                                     v-on:keyup.enter="szukajvjs" @keyup.down="dzialanie_strzalka_dol()"
                                     @keyup.up="dzialanie_strzalka_gora()" v-focus ref="poleinputa"
@@ -106,11 +106,10 @@
                     <div v-bind:class="[{ div_lista_m: isActive2 },{ mini_transformacja: isActive2 }]">
                         <div class="wysuwanie_autokompletera" v-bind:class="{ wysuwanie_autokompletera2: isActive2 }">
                             <div style="border-top: 1px solid #e8eaed; margin: 0 0 10px 0;"></div>
-                            <div class="div_lista_miast" v-for="(city, index) in filteredCities" :key="city.name"
+                            <div class="div_lista_miast" v-for="(city, index) in filteredCities()" :key="city.name"
                                 z-index="122" v-on:click="podstaw(city.name)"
                                 v-bind:class="{ klasa_podswietlenia_strzalka_dol: isActive3 }"
-                                @mouseover="mouseoverdivresults(index)" @mouseout="mouseoutdivresults(index)"
-                                ref="divresult">
+                                @mouseover="mouseoverdivresults(index)" @mouseout="mouseoutdivresults(index)">
 
                                 <span class="div3_form_1_a_1_a_lupa_1_span"
                                     style="margin: 0 5px 0 0; padding: 0 0 2px;">
@@ -556,36 +555,40 @@
                 },
                 szukajvjs: function () {
                     this.obliczCzas();
-                    var r = document.getElementsByClassName("klasa_podswietlenia_strzalka_dol")
+                    var r = document.getElementsByClassName("klasa_podswietlenia_strzalka_dol");
                     if (this.googleSearch != '' && !this.isActive) {
                         if (r.length != 0) {
                             this.googleSearch = r[0].innerText;
+                            r[0].classList.remove("klasa_podswietlenia_strzalka_dol");
                         }
                         this.isActive = !this.isActive
                         this.isActive2 = !this.isActive
                         input_wyszukiwarki.blur()
                         this.licznik = 0;
-                        r[0].classList.remove("klasa_podswietlenia_strzalka_dol");
+                        
 
                     }
                     else if (this.googleSearch != '' && this.isActive) {
                         if (r.length != 0) {
                             this.googleSearch = r[0].innerText;
+                            r[0].classList.remove("klasa_podswietlenia_strzalka_dol");
                         }
                         this.isActive2 = !this.isActive
                         input_wyszukiwarki.blur()
                         this.licznik = 0;
-                        r[0].classList.remove("klasa_podswietlenia_strzalka_dol");
+                        
                     }
                 },
 
                 mouseoverdivresults: function (index) {
-                    this.$refs.divresult[index].classList.add("div_lista_miast2");
+                    var listamiast = document.getElementsByClassName("div_lista_miast");
+                    listamiast[index].classList.add("div_lista_miast2");
                     // this.licznik = index
                 },
 
                 mouseoutdivresults: function (index) {
-                    this.$refs.divresult[index].classList.remove("div_lista_miast2");
+                    var listamiast = document.getElementsByClassName("div_lista_miast");
+                    listamiast[index].classList.remove("div_lista_miast2");
                     // this.licznik = 0
                 },
 
@@ -596,9 +599,14 @@
                 },
 
                 podstaw: function (miasto) {
+                    var listamiast = document.getElementsByClassName("div_lista_miast");
+                    for(i = 0; i < listamiast.length; i++){
+                        listamiast[i].classList.remove("div_lista_miast2");
+                    }
+                    
                     this.googleSearch = miasto
-                    this.szukajvjs()
-                    this.isActive2 = !this.isActive
+                    this.isActive = true
+                    this.isActive2 = false
                     this.licznik = 0;
                 },
 
@@ -691,16 +699,22 @@
                         zamien = element1.replace(RegExp(this.googleSearch, "gi"), `<span class="nobold">${element1.match(RegExp(this.googleSearch, "gi"))[0]}</span>`)
                     })
                     return zamien
-                }
-            },
-            computed:
-            {
+                },
+
                 filteredCities() {
                     return this.cities.filter((city) => {
                         return city.name.toLowerCase().includes(this.googleSearch.toLowerCase())
                     }).slice(0, 10)
                 },
-            }
+            },
+            // computed:
+            // {
+            //     filteredCities() {
+            //         return this.cities.filter((city) => {
+            //             return city.name.toLowerCase().includes(this.googleSearch.toLowerCase())
+            //         }).slice(0, 10)
+            //     },
+            // }
         })
 
     </script>
