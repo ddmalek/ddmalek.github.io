@@ -77,7 +77,7 @@
                             </div>
                             <div class="div3_form_1_a_1_a_inputdiv" id="wyszukiwarka">
                                 <input id="input_wyszukiwarki" class="div3_form_1_a_1_a_input"
-                                    v-on:input="tranformacja2" v-model="googleSearch" debounce="600" autofocus autocomplete="off"
+                                    v-on:input="tranformacja2" v-model="googleSearch" autofocus autocomplete="off"
                                     maxlength="500" type="text" name="search" title="Szukaj"
                                     v-on:keyup.enter="szukajvjs" @keyup.down="dzialanie_strzalka_dol()"
                                     @keyup.up="dzialanie_strzalka_gora()" v-focus ref="poleinputa"
@@ -556,28 +556,19 @@
                 szukajvjs: function () {
                     this.obliczCzas();
                     var r = document.getElementsByClassName("klasa_podswietlenia_strzalka_dol");
-                    if (this.googleSearch != '' && !this.isActive) {
+                    if (this.googleSearch != '') {
                         if (r.length != 0) {
                             this.googleSearch = r[0].innerText;
                             r[0].classList.remove("klasa_podswietlenia_strzalka_dol");
                         }
-                        this.isActive = !this.isActive
+                        if (this.googleSearch != '' && !this.isActive){
+                            this.isActive = !this.isActive
+                        }
                         this.isActive2 = !this.isActive
                         input_wyszukiwarki.blur()
                         this.licznik = 0;
-                        
+                    }
 
-                    }
-                    else if (this.googleSearch != '' && this.isActive) {
-                        if (r.length != 0) {
-                            this.googleSearch = r[0].innerText;
-                            r[0].classList.remove("klasa_podswietlenia_strzalka_dol");
-                        }
-                        this.isActive2 = !this.isActive
-                        input_wyszukiwarki.blur()
-                        this.licznik = 0;
-                        
-                    }
                 },
 
                 mouseoverdivresults: function (index) {
@@ -634,7 +625,7 @@
 
                     }
                     else {
-                        this.licznik = 0;
+                        this.licznik = 1;
                     }
                 },
 
