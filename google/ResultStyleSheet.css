@@ -369,4 +369,9 @@
     color: #202124;
 }
 
+@font-face {
+    font-family: "Futura-Normal";
+    src: url(fonts/futura_normal.ttf) format("truetype");
+  }
+
 
