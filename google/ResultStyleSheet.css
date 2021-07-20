@@ -366,14 +366,13 @@
     box-shadow: 0 1px 1px rgba(0,0,0,0.1);
     transition: all 0.0s;
     background-color: #f8f9fa;
-    background-image: linear-gradient(top,#f8f9fa,#f8f9fa);
     border: 1px solid #dadce0;
     color: #202124;
 }
 
 @font-face {
     font-family: "Futura-Normal";
-    src: url(fonts/futura_normal.ttf) format("truetype");
+    src: url('fonts/futura_normal.ttf') format("truetype");
   }
 
 
