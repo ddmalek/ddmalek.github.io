@@ -106,7 +106,7 @@
                     <div v-bind:class="[{ div_lista_m: isActive2 },{ mini_transformacja: isActive2 }]">
                         <div class="wysuwanie_autokompletera" v-bind:class="{ wysuwanie_autokompletera2: isActive2 }">
                             <div style="border-top: 1px solid #e8eaed; margin: 0 0 10px 0;"></div>
-                            <div class="div_lista_miast" v-for="(city, index) in filteredCities()" :key="city.name"
+                            <div class="div_lista_miast" v-for="(city, index) in filteredCities()" :key="city.geonameid"
                                 z-index="122" v-on:click="podstaw(city.name)"
                                 v-bind:class="{ klasa_podswietlenia_strzalka_dol: isActive3 }"
                                 @mouseover="mouseoverdivresults(index)" @mouseout="mouseoutdivresults(index)">
